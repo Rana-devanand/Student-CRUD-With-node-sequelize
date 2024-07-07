@@ -15,12 +15,44 @@ mysql2
     - config/
     - controllers/
     - middlewares/
+    - Migration/
     - models/
     - repository/
     - services/
     - utils/
 
 
-// step 1 :
-setup a server config ->
-config / serverConfig.js
+# Important -->
+Creating the first Model (and Migration)
+<----------------------------------------->
+step 1: [Create the config.json] inside this our database name is exist
+    run ->  `npx sequelize init`
+        - it create the /config/config.json. 
+        - it creates a by default folders /models , /seeders ,/Migration
+
+ ```
+    {
+        "development": {
+            "username": "root",
+            "password": "root",
+            "database": "Student",
+            "host": "127.0.0.1",
+            "dialect": "mysql"
+        },
+    }
+
+```
+Change the username,password,and database name as your specific need.
+
+<------------------------------------------->
+step 2: [create the database ]
+    run -> [npx sequelize db:create]
+
+check the mysql database there are new database is create [student] 
+
+<------------------------------------------->
+step 3:[Now create the database attributes]
+npx sequelize-cli model:generate --name [db_name] --attributes First-name:[datatype]..
+
+example:
+    - npx sequelize-cli model:generate --name Student --attributes firstName:string ,   lastName : string , Subject:string    
