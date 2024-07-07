@@ -13,10 +13,23 @@ module.exports = (sequelize, DataTypes) => {
   }
   student.init(
     {
-      firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
-      rollNo: DataTypes.INTEGER,
-      subject: DataTypes.STRING,
+      firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      lastName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      rollNo: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      subject: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
       sequelize,

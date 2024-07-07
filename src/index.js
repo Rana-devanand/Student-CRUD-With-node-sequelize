@@ -1,6 +1,7 @@
 const express = require("express");
-const { PORT } = require("./config/serverConfig");
 const bodyParser = require("body-parser");
+const { PORT } = require("./config/serverConfig");
+const studentRepo = require("./repository/student-repository");
 
 const app = express();
 
@@ -14,6 +15,9 @@ app.use(
 const setupAndStartService = () => {
   app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
+    const repo = new studentRepo();
+    // repo.deleteData(3);
+    repo.createData("Devanand", "Rana", 1002, "CMS");
   });
 };
 
