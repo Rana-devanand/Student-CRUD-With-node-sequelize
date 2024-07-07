@@ -1,0 +1,26 @@
+-- install Packages-- 
+
+express,  -> for server
+nodemon,  -> for auto-restart
+body-parser,   -> for handle incoming request
+sequelize-cli, -> for sql database
+sequelize,     -> for sql query 
+dotenv,        -> make variable private
+mysql2
+ 
+
+-- folders Which we setup first --
+
+ - index.js/ server
+    - config/
+    - controllers/
+    - middlewares/
+    - models/
+    - repository/
+    - services/
+    - utils/
+
+
+// step 1 :
+setup a server config ->
+config / serverConfig.js
