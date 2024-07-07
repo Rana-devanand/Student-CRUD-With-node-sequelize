@@ -44,14 +44,35 @@ Creating the first Model (and Migration)
 
 - Change the username,password,and database name as your specific need.
 
-          step 2: [create the database ]
+#
 
-- run -> [npx sequelize db:create]
+       step 2: [create the database ].
+
+- run -> `npx sequelize db:create`
 
 - check the mysql database there are new database is name create [student]
 
+#
+
           step 3:[Now create the database attributes]
 
-- run -> `npx sequelize-cli model:generate --name [db_name] --attributes First-name:[datatype] etc`
+- run --> `npx sequelize-cli model:generate --name [db_name] --attributes First-name:[datatype] etc`
 
-- `example` : - npx sequelize-cli model:generate --name Student --attributes firstName:string , lastName : string , Subject:string
+- `example` --> npx sequelize-cli model:generate --name Student --attributes firstName:string , lastName : string , Subject:string
+
+#
+
+        step 4 : [Any changes in the Migration file ]
+
+- if we have a doing any changes inside the our migration folder than we run the command.
+- run -> `npx sequelize db:migrate`
+  -> This command changes the migrations of our database like : database constraints , unique , not-null etc.
+
+- After run the above command our database is successfully created.
+
+#
+
+        step 5: [Create student repository] /repository/student-repository.js
+
+- Inside this repository folder we created a student-repository.js.
+- we create the method to insert the data

@@ -56,3 +56,20 @@ npx sequelize-cli model:generate --name [db_name] --attributes First-name:[datat
 
 example:
     - npx sequelize-cli model:generate --name Student --attributes firstName:string ,   lastName : string , Subject:string    
+
+
+<------------------------------------------->
+step 4 : [Any changes in the Migration file ]
+-> 
+    if we have a doing any changes inside the our migration folder than we run the command.
+run -> `npx sequelize db:migrate`
+    -> This command changes the migrations of our database like : database constraints , unique , not-null etc. 
+
+After run the above command our database is successfully created.
+
+
+step 5: [Create student repository] /repository/student-repository.js
+-> 
+    1.Inside this repository folder we created a student-repository.js.
+    2.we create the method to insert the data 
+
