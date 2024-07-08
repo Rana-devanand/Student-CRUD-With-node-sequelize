@@ -1,6 +1,6 @@
-const { studentService } = require("../services/index");
+const { StudentServices } = require("../services/index");
 
-const studentService = new studentService();
+const studentService = new StudentServices();
 
 const create = async (req, res) => {
   try {

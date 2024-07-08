@@ -1,4 +1,4 @@
-const { StudentRepo } = require("../repository/student-repository");
+const StudentRepo = require("../repository/student-repository");
 
 class StudentServices {
   constructor() {
@@ -7,10 +7,11 @@ class StudentServices {
 
   async createData(createData) {
     try {
+      console.log(createData);
       const data = await this.StudentRepo.createData(createData);
       return data;
     } catch (error) {
-      console.log("Something went wrong in the Student Service");
+      console.error("Something went wrong in the Student Service", error);
       throw { error };
     }
   }

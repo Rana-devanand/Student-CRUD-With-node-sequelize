@@ -2,13 +2,13 @@ const { student } = require("../models/index");
 
 class StudentData {
   // insert the data
-  async createData(firstName, lname, rno, sub) {
+  async createData(stuData) {
     try {
       const data = await student.create({
-        firstName: firstName,
-        lastName: lname,
-        rollNo: rno,
-        subject: sub,
+        firstName: stuData.firstName,
+        lastName: stuData.lastName,
+        rollNo: stuData.rollNo,
+        subject: stuData.subject,
       });
       return data;
     } catch (error) {
@@ -27,7 +27,7 @@ class StudentData {
       });
       return deleteData;
     } catch (error) {
-      console.log("Something went on delete student repository");
+      console.error("Something went on delete student repository", error);
       throw { error };
     }
   }
