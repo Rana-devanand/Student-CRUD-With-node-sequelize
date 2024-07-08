@@ -16,8 +16,6 @@ const setupAndStartService = () => {
   app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
     const repo = new studentRepo();
-    // repo.deleteData(3);
-    repo.createData("Devanand", "Rana", 1002, "CMS");
   });
 };
 
