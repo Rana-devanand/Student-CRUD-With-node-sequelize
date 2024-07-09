@@ -42,7 +42,28 @@ const destroy = async (req, res) => {
   }
 };
 
+const get = async (req, res) => {
+  try {
+    const getStudentData = await studentService.getData(req.params.id);
+    return res.status(200).json({
+      data: getStudentData,
+      success: true,
+      message: "Successfully fetched the data",
+      err: {},
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "Unable to fetched the data",
+      err: error,
+    });
+  }
+};
+
 module.exports = {
   create,
   destroy,
+  get,
 };

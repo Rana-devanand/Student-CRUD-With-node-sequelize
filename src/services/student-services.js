@@ -24,8 +24,19 @@ class StudentServices {
       throw { error };
     }
   }
+  // update method will be declared later
   async updateData() {}
-  async getData() {}
+
+  //  Get data
+  async getData(studId) {
+    try {
+      const getData = await this.StudentRepo.getData(studId);
+      return getData;
+    } catch (error) {
+      console.log("Something went wrong in Student-service to delete the data");
+      throw { error };
+    }
+  }
 }
 
 module.exports = StudentServices;

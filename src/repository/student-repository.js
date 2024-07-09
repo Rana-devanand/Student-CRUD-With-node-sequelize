@@ -27,7 +27,20 @@ class StudentData {
       });
       return deleteData;
     } catch (error) {
-      console.error("Something went on delete student repository", error);
+      console.error("Something went wrong on delete student repository", error);
+      throw { error };
+    }
+  }
+
+  async getData(studId) {
+    try {
+      const getData = await student.findByPk(studId);
+      return getData;
+    } catch (error) {
+      console.error(
+        "Something went wrong on fetched student repository",
+        error
+      );
       throw { error };
     }
   }
